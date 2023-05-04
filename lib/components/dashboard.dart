@@ -1,3 +1,4 @@
+import 'package:attendance/pages/attendance.dart';
 import 'package:attendance/pages/home.dart';
 import 'package:attendance/pages/more.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,7 @@ class _DashboardState extends State<Dashboard> {
       'Chat Page',
       style: optionStyle,
     ),
-    Text(
-      'Attendance Page',
-      style: optionStyle,
-    ),
+    Attendance(),
     Text(
       'Notification Page',
       style: optionStyle,
