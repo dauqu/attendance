@@ -1,4 +1,5 @@
 import 'package:attendance/pages/home.dart';
+import 'package:attendance/pages/more.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -28,10 +29,7 @@ class _DashboardState extends State<Dashboard> {
       'Notification Page',
       style: optionStyle,
     ),
-    Text(
-      'More Page',
-      style: optionStyle,
-    ),
+    MorePage()
   ];
 
   void _onItemTapped(int index) {
