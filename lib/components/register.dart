@@ -20,6 +20,7 @@ class _RegisterState extends State<Register> {
           padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const SizedBox(
                 height: 50,
@@ -98,7 +99,13 @@ class _RegisterState extends State<Register> {
                     child: Divider(
                   color: Colors.black,
                 )),
+                SizedBox(
+                  width: 10,
+                ),
                 Text("OR"),
+                SizedBox(
+                  width: 10,
+                ),
                 Expanded(
                     child: Divider(
                   color: Colors.black,
