@@ -33,7 +33,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 30.0, right: 20.0),
@@ -156,7 +156,7 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               const SizedBox(
-                height: 30,
+                height: 50,
               ),
 
               //Rich Text
