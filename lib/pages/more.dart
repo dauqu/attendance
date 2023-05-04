@@ -1,3 +1,4 @@
+import 'package:attendance/pages/my_leaves.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -61,10 +62,18 @@ class _MorePageState extends State<MorePage> {
                             child: Container(
                               padding: const EdgeInsets.all(5),
                               child: Column(
-                                children: const [
+                                children: [
                                   ListTile(
-                                    leading: Icon(Icons.description),
-                                    title: Text("My Leaves"),
+                                    onTap: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                const MyLeaves(),
+                                          ));
+                                    },
+                                    leading: const Icon(Icons.description),
+                                    title: const Text("My Leaves"),
                                   ),
                                   Divider(
                                     color: Colors.grey,
