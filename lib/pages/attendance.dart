@@ -35,15 +35,35 @@ class _AttendanceState extends State<Attendance> {
                   child: DataTable(
                     horizontalMargin: 10,
                     // border: TableBorder.all(color: Colors.grey),
-                    columnSpacing: 20,
+                    columnSpacing: 15,
                     dividerThickness: 1,
                     //Full weight of the table
                     columns: const [
-                      DataColumn(label: Text('Date')),
-                      DataColumn(label: Text('Status')),
-                      DataColumn(label: Text('Check In')),
-                      DataColumn(label: Text('Check Out')),
-                      DataColumn(label: Text('Edit')),
+                      DataColumn(
+                          label: Text(
+                        'Date',
+                        style: TextStyle(fontSize: 14),
+                      )),
+                      DataColumn(
+                          label: Text(
+                        'Status',
+                        style: TextStyle(fontSize: 14),
+                      )),
+                      DataColumn(
+                          label: Text(
+                        'Check In',
+                        style: TextStyle(fontSize: 14),
+                      )),
+                      DataColumn(
+                          label: Text(
+                        'Check Out',
+                        style: TextStyle(fontSize: 14),
+                      )),
+                      DataColumn(
+                          label: Text(
+                        'Edit',
+                        style: TextStyle(fontSize: 14),
+                      )),
                     ],
                     rows: [
                       DataRow(cells: [
