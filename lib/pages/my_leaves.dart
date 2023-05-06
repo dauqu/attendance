@@ -23,7 +23,9 @@ class _MyLeavesState extends State<MyLeaves> {
               Icons.arrow_back_ios,
               color: Colors.black,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
           title: const Text("My Leaves", style: TextStyle(color: Colors.black)),
         ),

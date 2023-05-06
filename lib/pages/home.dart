@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     const SizedBox(
-                      height: 10,
+                      height: 5,
                     ),
                     const Text(
                       "Monday, 2nd August 2021",
@@ -81,33 +81,56 @@ class _HomePageState extends State<HomePage> {
                 height: 40,
               ),
               //Attendance button
-              Card(
-                  elevation: 1,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+              Container(
+                width: 230,
+                height: 200,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.3),
+                    width: 10,
                   ),
-                  child: Container(
-                    padding: const EdgeInsets.all(30),
-                    child: Column(
-                      children: const [
-                        Icon(
-                          Icons.alarm_on,
-                          size: 50,
-                          color: Color(0xFF2EA7A3),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Time Marked",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xFF35A6A8).withAlpha(10),
+                      blurRadius: 20,
+                      spreadRadius: -5,
+                      offset: const Offset(0, 0),
                     ),
-                  )),
+                  ],
+                  gradient: const LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      Color(0xFF35A6A8),
+                      Color(0xFF7D9EEC),
+                    ],
+                  ),
+                ),
+                child: Container(
+                  padding: const EdgeInsets.all(30),
+                  child: Column(
+                    children: const [
+                      Icon(
+                        Icons.ads_click,
+                        size: 50,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "Clock In",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 40,
               ),
