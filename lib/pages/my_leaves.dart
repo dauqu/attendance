@@ -1,3 +1,4 @@
+import 'package:attendance/pages/apply_leaves.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
@@ -132,11 +133,11 @@ class _MyLeavesState extends State<MyLeaves> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //       builder: (context) => const Dashboard(),
-                        //     ));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ApplyLeaves(),
+                            ));
                       },
                       style: ElevatedButton.styleFrom(
                         side: const BorderSide(
@@ -232,7 +233,7 @@ class _ApproveState extends State<Approve> {
                 onPressed: () {},
                 child: const Text("Approved")),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ListTile(
@@ -285,7 +286,7 @@ class _PendingState extends State<Pending> {
                 onPressed: () {},
                 child: const Text("Pending")),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ListTile(
