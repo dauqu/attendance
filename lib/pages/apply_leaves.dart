@@ -15,29 +15,36 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
 
   void _showDatePicker() {
     //show date picker
-    showDateRangePicker(
+    // showDateRangePicker(
+    //         context: context,
+    //         initialDateRange: DateTimeRange(
+    //           start: DateTime.now(),
+    //           end: DateTime.now(),
+    //         ),
+    //         //which date will display when user open the picker
+    //         firstDate: DateTime(1950),
+    //         //what will be the previous supported year in picker
+    //         lastDate: DateTime
+    //             .now()) //what will be the up to supported date in picker
+    //     .then((pickedDate) {
+    //   //then usually do the future job
+    //   if (pickedDate == null) {
+    //     //if user tap cancel then this function will stop
+    //     return;
+    //   }
+    //   setState(() {
+    //     //for rebuilding the ui
+    //     // _selectedDate = pickedDate;
+    //     //for rebuilding the ui
+    //   });
+    // });
+
+    showDatePicker(
             context: context,
-            initialDateRange: DateTimeRange(
-              start: DateTime.now(),
-              end: DateTime.now(),
-            ),
-            //which date will display when user open the picker
-            firstDate: DateTime(1950),
-            //what will be the previous supported year in picker
-            lastDate: DateTime
-                .now()) //what will be the up to supported date in picker
-        .then((pickedDate) {
-      //then usually do the future job
-      if (pickedDate == null) {
-        //if user tap cancel then this function will stop
-        return;
-      }
-      setState(() {
-        //for rebuilding the ui
-        // _selectedDate = pickedDate;
-        //for rebuilding the ui
-      });
-    });
+            initialDate: DateTime.now(),
+            firstDate: DateTime(2000),
+            lastDate: DateTime(2023))
+        .then((value) => {});
   }
 
   @override
@@ -81,19 +88,40 @@ class _ApplyLeavesState extends State<ApplyLeaves> {
                     padding: const EdgeInsets.all(2),
                     child: SingleChildScrollView(
                       child: TextField(
-                          controller: _myController,
-                          readOnly: true,
-                          decoration: const InputDecoration(
-                            prefixIcon: Icon(
-                              Icons.calendar_today,
-                              color: Color(0xFF2EA7A3),
-                              size: 20,
-                            ),
-                            suffixText: "2 days",
-                            border: InputBorder.none,
-                            hintText: '25th Aug - 27th Aug',
+                        controller: _myController,
+                        readOnly: true,
+                        decoration: const InputDecoration(
+                          prefixIcon: Icon(
+                            Icons.calendar_today,
+                            color: Color(0xFF2EA7A3),
+                            size: 20,
                           ),
-                          onTap: _showDatePicker),
+                          suffixText: "2 days",
+                          border: InputBorder.none,
+                          hintText: '25th Aug - 27th Aug',
+                        ),
+                        onTap: () async {
+                          DateTime? pickedDate = await showDatePicker(
+                              context: context,
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime(1950),
+                              //DateTime.now() - not to allow to choose before today.
+                              lastDate: DateTime(2100));
+
+                          if (pickedDate != null) {
+                            print(
+                                pickedDate); //pickedDate output format => 2021-03-10 00:00:00.000
+                            // String formattedDate =
+                            //     DateFormat('yyyy-MM-dd').format(pickedDate);
+                            // print(
+                            //     formattedDate); //formatted date output using intl package =>  2021-03-16
+                            setState(() {
+                              // dateInput.text =
+                              //     formattedDate; //set output date to TextField value.
+                            });
+                          } else {}
+                        },
+                      ),
                     ),
                   ),
                 ),
